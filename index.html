@@ -275,8 +275,8 @@
       width:42px;height:42px;border-radius:10px;
       display:flex;align-items:center;justify-content:center;font-size:17px;
     }
-    .ch-card.yt .ch-icon{background:rgba(255,80,80,0.10);color:#ff7070}
-    .ch-card.ig .ch-icon{background:var(--vlt-pale);color:var(--vlt2)}
+    .ch-card.yt .ch-icon{background:transparent}
+    .ch-card.ig .ch-icon{background:transparent}
     .ch-card.ml .ch-icon{background:var(--vlt-pale);color:var(--vlt2)}
 
     .ch-card h4{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:19px;color:var(--txt)}
@@ -458,7 +458,7 @@ vermiyorsun —
   <div class="channels-grid">
 
     <a href="https://www.youtube.com/@blindspothqtr" target="_blank" class="ch-card yt">
-      <div class="ch-icon">▶</div>
+      <div class="ch-icon"><svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.582 2.186A2.506 2.506 0 0 0 17.822.418C16.254 0 10 0 10 0S3.746 0 2.178.418A2.506 2.506 0 0 0 .418 2.186C0 3.76 0 7 0 7s0 3.24.418 4.814a2.506 2.506 0 0 0 1.76 1.768C3.746 14 10 14 10 14s6.254 0 7.822-.418a2.506 2.506 0 0 0 1.76-1.768C20 10.24 20 7 20 7s0-3.24-.418-4.814z" fill="#FF0000"/><path d="M8 10l5.196-3L8 4v6z" fill="white"/></svg></div>
       <h4>YouTube</h4>
       <p data-i18n="yt_desc">Düşünme, karar psikolojisi ve zihin araçları üzerine kısa videolar.</p>
       <p class="ch-handle">@blindspothqtr</p>
@@ -466,18 +466,18 @@ vermiyorsun —
     </a>
 
     <a href="https://www.instagram.com/blindspot.hq/" target="_blank" class="ch-card ig">
-      <div class="ch-icon">◉</div>
+      <div class="ch-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="ig1" cx="30%" cy="107%" r="150%"><stop offset="0%" stop-color="#fdf497"/><stop offset="5%" stop-color="#fdf497"/><stop offset="45%" stop-color="#fd5949"/><stop offset="60%" stop-color="#d6249f"/><stop offset="90%" stop-color="#285AEB"/></radialGradient></defs><rect width="20" height="20" rx="5" fill="url(#ig1)"/><circle cx="10" cy="10" r="4" stroke="white" stroke-width="1.5" fill="none"/><circle cx="15" cy="5" r="1" fill="white"/></svg></div>
       <h4>Instagram</h4>
       <p data-i18n="ig_desc">Günlük düşünce kırıntıları, karar çerçeveleri ve zihin açıcı içerikler.</p>
       <p class="ch-handle">@blindspot.hq</p>
       <div class="ch-arrow">→</div>
     </a>
 
-    <a href="/cdn-cgi/l/email-protection#781a1411161c0b08170c381a1411161c0b08170c1009561b1715" class="ch-card ml">
+    <a href="#" id="mailCard" data-u="blindspot" data-d="blindspothq.com" class="ch-card ml" onclick="var u=this.dataset.u,d=this.dataset.d;window.location='mai'+'lto:'+u+'@'+d;return false;">
       <div class="ch-icon">✉</div>
       <h4 data-i18n="mail_h">İletişim</h4>
       <p data-i18n="mail_desc">Ortaklık, öneri veya sadece merhaba demek için.</p>
-      <p class="ch-handle"><span class="__cf_email__" data-cfemail="6406080d0a0017140b102406080d0a0017140b100c154a070b09">[email&#160;protected]</span></p>
+      <p class="ch-handle" id="mailHandle" data-u="blindspot" data-d="blindspothq.com"></p>
       <div class="ch-arrow">→</div>
     </a>
 
@@ -587,6 +587,10 @@ function applyLang(l) {
   });
   document.getElementById('langBtn').textContent = t.lang_toggle;
   document.documentElement.lang = l;
+  var h = document.getElementById('mailHandle');
+  var c = document.getElementById('mailCard');
+  if (h) h.textContent = 'blindspot' + String.fromCharCode(64) + 'blindspothq.com';
+  if (c) c.href = 'mai' + 'lto:' + 'blindspot' + String.fromCharCode(64) + 'blindspothq.com';
 }
 
 function toggleLang() {
