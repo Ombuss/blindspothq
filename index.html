@@ -562,7 +562,7 @@ const i18n = {
     yt_desc:"Short videos on thinking, decision psychology, and mind tools.",
     ig_desc:"Daily thought fragments, decision frameworks, and mind-opening content.",
     mail_h:"Contact",mail_desc:"For partnerships, suggestions, or just to say hello.",
-    email_h2:`Be first on<br /><em>tools.</em>`,
+    email_h2:`Be first on<br /><em>our tools.</em>`,
     email_desc:"Join the early access list. No spam, only important updates.",
     email_placeholder:"your email address",email_btn:"Subscribe",
     email_note:"We don't share your data with third parties.",
@@ -610,8 +610,8 @@ async function submitEmail() {
     note.style.color = "var(--red)";
     return;
   }
-  const formId = "1FAIpQLSeyCFYPJBuJpu52ljp1UstpApJPXVHeU9f_lYs2ZQxPnT2iFg";
-  const entryId = "entry.1655728874";
+  const formId = "1FAIpQLSestp7UXmVKX6FHo9kCz1wMjpGELMcfCeR8jldlv-pcwAKi6w";
+  const entryId = "entry.360883211";
   const url = "https://docs.google.com/forms/d/e/" + formId + "/formResponse?" + entryId + "=" + encodeURIComponent(email) + "&submit=Submit";
   try { await fetch(url, { method: "POST", mode: "no-cors" }); } catch(e) {}
   form.style.display = "none";
