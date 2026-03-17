@@ -115,6 +115,23 @@
     }
     .hero-tag::before{content:'';display:block;width:26px;height:1px;background:var(--violet);opacity:0.5}
 
+    .hero-desc,
+    .manifesto-body {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(15px, 1.5vw, 17px);
+      line-height: 1.85;
+      font-weight: 300;
+      color: var(--txt2);
+      text-align: justify;
+      hyphens: auto;
+    }
+    .manifesto-body { margin-bottom: 0; max-width: none; position: static; z-index: auto; }
+    .hero-desc { margin-bottom: 52px; max-width: 600px; position: relative; z-index: 1; }
+    .manifesto-body p { margin: 0; }
+    .manifesto-body p + p { margin-top: 18px; }
+    .hero-desc strong,
+    .manifesto-body strong { color: var(--txt); font-weight: 500; }
+
     .hero h1{
       font-family:'Cormorant Garamond',serif;font-weight:300;
       font-size:clamp(46px,7vw,86px);line-height:1.06;
@@ -124,13 +141,8 @@
     }
     .hero h1 em{font-style:italic;color:var(--vlt2)}
 
-    .hero-desc{
-      font-size:clamp(15px,1.5vw,17px);color:var(--txt2);
-      line-height:1.85;margin-bottom:52px;max-width:600px;
-      font-weight:300;position:relative;z-index:1;
-      text-align:justify;hyphens:auto;
-    }
-    .hero-desc strong{color:var(--txt);font-weight:500}
+    
+    
 
     .hero-cta{
       display:flex;gap:14px;flex-wrap:wrap;align-items:center;
@@ -179,9 +191,9 @@
     }
     .manifesto h2 em{font-style:italic;color:var(--vlt2)}
 
-    .manifesto-body{color:var(--txt2);font-size:16px;line-height:1.9;font-weight:300;text-align:justify;hyphens:auto}
-    .manifesto-body p+p{margin-top:18px}
-    .manifesto-body strong{color:var(--txt);font-weight:500}
+    
+    
+    
 
     /* PRODUCTS */
     .products{padding:96px 56px}
@@ -191,7 +203,7 @@
       font-size:clamp(26px,3.5vw,42px);color:var(--txt);margin-bottom:48px;
     }
 
-    .products-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 
     .prod-card{
       border-radius:8px;padding:42px;position:relative;
@@ -355,7 +367,7 @@
 
     @media(max-width:600px){
       .hero h1{font-size:40px}
-      .hero-desc{font-size:15px}
+      
       .btn-primary,.btn-ghost{width:100%;text-align:center;justify-content:center}
       .email-form{flex-direction:column}
       .email-btn{text-align:center;padding:15px}
@@ -383,7 +395,7 @@
   <h1 data-i18n="hero_h1">Yanlış karar
 vermiyorsun —
 <em>yanlış düşünüyorsun.</em></h1>
-  <p class="hero-desc" data-i18n="hero_desc">Her gün onlarca karar alıyorsun. Ama çoğu zaman yanlış karar vermiyorsun — <strong>yanlış düşünüyorsun.</strong> Blindspot, bu hatayı düzeltmek için var. Kararlarını şekillendiren görünmez mekanizmalar var — ve bunlar görünür kılınabilir. Ne yediğinden (Cravio), nasıl karar verdiğine (Decision Zero), nasıl düşündüğüne kadar. Bu bir motivasyon platformu değil. <strong>Düşünme biçimini sistematik olarak yeniden inşa etme girişimi.</strong></p>
+  <p class="hero-desc" data-i18n="hero_desc">Her gün onlarca karar alıyorsun. Ama çoğu zaman yanlış karar vermiyorsun — <strong>yanlış düşünüyorsun.</strong> Blindspot, bu hatayı düzeltmek için var. Kararlarını şekillendiren görünmez mekanizmalar var — ve bunlar görünür kılınabilir. Ne yediğinden (Cravio), nasıl karar verdiğine (Decision Zero), yatırımlarını nasıl takip ettiğine (Clarity), nasıl düşündüğüne kadar. Bu bir motivasyon platformu değil. <strong>Düşünme biçimini sistematik olarak yeniden inşa etme girişimi.</strong></p>
   <div class="hero-cta">
     <a href="#notify" class="btn-primary" data-i18n="cta1">Haberdar Ol</a>
     <a href="#products" class="btn-ghost" data-i18n="cta2">Ürünleri Keşfet →</a>
@@ -397,11 +409,7 @@ vermiyorsun —
   <div class="sec-label" data-i18n="sec_why">Neden BLINDSPOT</div>
   <div class="manifesto-grid">
     <h2 data-i18n="mani_h2">Görmediğin şey<br /><em>seni yönetir.</em></h2>
-    <div class="manifesto-body" data-i18n="mani_body"><p>Önyargılar, alışkanlıklar ve anlık duygular kararlarına sessizce sızar. Çoğu zaman bunu fark etmezsin; sadece sonuçları görürsün, nedenlerini değil.</p><p>BLINDSPOT, bu görünmez mekanizmaları görünür kılar. Tam karar anında, düşüncenin içindeyken bir adım geri çekilebilmeni sağlar.</p><p>Daha iyi düşünmek bir yetenek değil, bir pratiktir. Doğru sistemlerle bu pratik geliştirilebilir.</p><p>YouTube ve Instagram'da, düşünme psikolojisi ve karar bilimlerine dair içeriklere de ulaşabilirsin.</p>
-      <p>Önyargılar, alışkanlıklar ve anlık duygular kararlarının içine sızıyor. Bunları fark etmeden, <strong>sadece sonuçları görüyorsun</strong> — nedeni değil.</p>
-      <p>BLINDSPOT, bu görünmez mekanizmaları yüzeye çıkarıyor. Karar anında, düşüncenin tam ortasında, bir adım geri çekilebilmeni sağlıyor.</p>
-      <p>Daha iyi düşünmek bir yetenek değil, <strong>bir pratik meselesi.</strong> Doğru araçlarla herkes bunu öğrenebilir.</p>
-    </div>
+    <div class="manifesto-body" data-i18n="mani_body"></div>
   </div>
 </section>
 
@@ -412,20 +420,30 @@ vermiyorsun —
   <div class="products-grid">
 
     <div class="prod-card violet-card">
-      <span class="prod-badge badge-live" data-i18n="cravio_badge">Aktif</span>
+      <span class="prod-badge badge-soon" data-i18n="cravio_badge">Yakında</span>
       <span class="prod-icon">🔥</span>
       <h3>Cravio</h3>
       <p class="prod-tagline" data-i18n="cravio_tagline">by BLINDSPOT — Ne yiyeceğine karar ver</p>
       <p data-i18n="cravio_desc">Craving mi hissediyorsun? Cravio kategorine göre yemek seçmeni sağlıyor ve nasıl pişireceğini adım adım gösteriyor. Yemek kararlarındaki kaosun sonu.</p>
+      <a href="#notify" class="prod-cta" data-i18n="cravio_cta">Lansman bildirimi al →</a>
     </div>
 
-    <div class="prod-card sage-card">
-      <span class="prod-badge badge-soon" data-i18n="dz_badge">Çok Yakında</span>
+    <div class="prod-card violet-card">
+      <span class="prod-badge badge-soon" data-i18n="dz_badge">Yakında</span>
       <span class="prod-icon">◎</span>
       <h3>Decision Zero</h3>
       <p class="prod-tagline" data-i18n="dz_tagline">by BLINDSPOT — Karar analiz aracı</p>
       <p data-i18n="dz_desc">Bir karar, düşünce ya da problemi yaz. Bağlamı algılar, önyargılarını ortaya çıkarır, tradeoff'ları listeler, mental model önerir. Tek giriş, derin analiz.</p>
       <a href="#notify" class="prod-cta" data-i18n="dz_cta">Lansman bildirimi al →</a>
+    </div>
+
+    <div class="prod-card violet-card">
+      <span class="prod-badge badge-soon" data-i18n="clarity_badge">Yakında</span>
+      <span class="prod-icon">◈</span>
+      <h3>Clarity</h3>
+      <p class="prod-tagline" data-i18n="clarity_tagline">by BLINDSPOT — Yatırım takip aracı</p>
+      <p data-i18n="clarity_desc">Portföyünü takip et, varlıklarını izle, yatırım kararlarını daha net bir zihinle al. Karmaşık değil, odaklı.</p>
+      <a href="#notify" class="prod-cta" data-i18n="clarity_cta">Lansman bildirimi al →</a>
     </div>
 
   </div>
@@ -436,7 +454,7 @@ vermiyorsun —
 <!-- CHANNELS -->
 <section class="channels" id="channels">
   <div class="sec-label" data-i18n="sec_content">İçerik</div>
-  <h2 data-i18n="ch_h2">BLINDSPOT nerede yayınlıyor</h2>
+  <h2 data-i18n="ch_h2">BLINDSPOT Sosyal Medya ve İletişim</h2>
   <div class="channels-grid">
 
     <a href="https://www.youtube.com/@blindspothqtr" target="_blank" class="ch-card yt">
@@ -455,11 +473,11 @@ vermiyorsun —
       <div class="ch-arrow">→</div>
     </a>
 
-    <a href="javascript:void(0)" onclick="window.location='mai'+'lto:blind'+'spot@blindspothq.com'" class="ch-card ml">
+    <a href="/cdn-cgi/l/email-protection#781a1411161c0b08170c381a1411161c0b08170c1009561b1715" class="ch-card ml">
       <div class="ch-icon">✉</div>
       <h4 data-i18n="mail_h">İletişim</h4>
       <p data-i18n="mail_desc">Ortaklık, öneri veya sadece merhaba demek için.</p>
-      <p class="ch-handle"><span class="__cf_email__" data-cfemail="26444a4f48425556495266444a4f4842555649524e570845494b">[email&#160;protected]</span></p>
+      <p class="ch-handle"><span class="__cf_email__" data-cfemail="6406080d0a0017140b102406080d0a0017140b100c154a070b09">[email&#160;protected]</span></p>
       <div class="ch-arrow">→</div>
     </a>
 
@@ -487,24 +505,28 @@ vermiyorsun —
   <p data-i18n="footer">© 2026 Blindspot HQ · blindspothq.com</p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const i18n = {
   tr: {
     nav_products:"Ürünler",nav_content:"İçerik",nav_notify:"Haberdar Ol",
     hero_tag:"Bir düşünme ekosistemi",
     hero_h1:`Yanlış karar\nvermiyorsun —\n<em>yanlış düşünüyorsun.</em>`,
-    hero_desc:`Her gün onlarca karar alıyorsun. Ama çoğu zaman yanlış karar vermiyorsun — <strong>yanlış düşünüyorsun.</strong> Blindspot, bu hatayı düzeltmek için var. Kararlarını şekillendiren görünmez mekanizmalar var — ve bunlar görünür kılınabilir. Ne yediğinden (Cravio), nasıl karar verdiğine (Decision Zero), nasıl düşündüğüne kadar. Bu bir motivasyon platformu değil. <strong>Düşünme biçimini sistematik olarak yeniden inşa etme girişimi.</strong>`,
+    hero_desc:`Her gün onlarca karar alıyorsun. Ama çoğu zaman yanlış karar vermiyorsun — <strong>yanlış düşünüyorsun.</strong> Blindspot, bu hatayı düzeltmek için var. Kararlarını şekillendiren görünmez mekanizmalar var — ve bunlar görünür kılınabilir. Ne yediğinden (Cravio), nasıl karar verdiğine (Decision Zero), yatırımlarını nasıl takip ettiğine (Clarity), nasıl düşündüğüne kadar. Bu bir motivasyon platformu değil. <strong>Düşünme biçimini sistematik olarak yeniden inşa etme girişimi.</strong>`,
     cta1:"Haberdar Ol",cta2:"Ürünleri Keşfet →",
     sec_why:"Neden BLINDSPOT",sec_eco:"Ekosistem",sec_content:"İçerik",sec_notify:"Haberdar Ol",
     mani_h2:`Görmediğin şey<br /><em>seni yönetir.</em>`,
     mani_body:`<p>Önyargılar, alışkanlıklar ve anlık duygular kararlarına sessizce sızar. Çoğu zaman bunu fark etmezsin; sadece sonuçları görürsün, nedenlerini değil.</p><p>BLINDSPOT, bu görünmez mekanizmaları görünür kılar. Tam karar anında, düşüncenin içindeyken bir adım geri çekilebilmeni sağlar.</p><p>Daha iyi düşünmek bir yetenek değil, bir pratiktir. Doğru sistemlerle bu pratik geliştirilebilir.</p><p>YouTube ve Instagram'da, düşünme psikolojisi ve karar bilimlerine dair içeriklere de ulaşabilirsin.</p>`,
     prod_h2:"BLINDSPOT araçları",
-    cravio_badge:"Aktif",cravio_tagline:"by BLINDSPOT — Ne yiyeceğine karar ver",
+    cravio_badge:"Yakında",cravio_tagline:"by BLINDSPOT — Ne yiyeceğine karar ver",
     cravio_desc:"Craving mi hissediyorsun? Cravio kategorine göre yemek seçmeni sağlıyor ve nasıl pişireceğini adım adım gösteriyor. Yemek kararlarındaki kaosun sonu.",
-    dz_badge:"Çok Yakında",dz_tagline:"by BLINDSPOT — Karar analiz aracı",
+    cravio_cta:"Lansman bildirimi al →",
+    dz_badge:"Yakında",dz_tagline:"by BLINDSPOT — Karar analiz aracı",
     dz_desc:"Bir karar, düşünce ya da problemi yaz. Bağlamı algılar, önyargılarını ortaya çıkarır, tradeoff'ları listeler, mental model önerir. Tek giriş, derin analiz.",
     dz_cta:"Lansman bildirimi al →",
-    ch_h2:"BLINDSPOT nerede yayınlıyor",
+    clarity_badge:"Yakında",clarity_tagline:"by BLINDSPOT — Yatırım takip aracı",
+    clarity_desc:"Portföyünü takip et, varlıklarını izle, yatırım kararlarını daha net bir zihinle al. Karmaşık değil, odaklı.",
+    clarity_cta:"Lansman bildirimi al →",
+    ch_h2:"BLINDSPOT Sosyal Medya ve İletişim",
     yt_desc:"Düşünme, karar psikolojisi ve zihin araçları üzerine kısa videolar.",
     ig_desc:"Günlük düşünce kırıntıları, karar çerçeveleri ve zihin açıcı içerikler.",
     mail_h:"İletişim",mail_desc:"Ortaklık, öneri veya sadece merhaba demek için.",
@@ -521,18 +543,22 @@ const i18n = {
     nav_products:"Products",nav_content:"Content",nav_notify:"Stay Updated",
     hero_tag:"A thinking ecosystem",
     hero_h1:`You're not making\nwrong decisions —\n<em>you're thinking wrong.</em>`,
-    hero_desc:`Every day you make dozens of decisions. But most of the time you're not making wrong decisions — <strong>you're thinking wrong.</strong> Blindspot exists to fix this. There are invisible mechanisms shaping your decisions — and they can be made visible. From what you eat (Cravio), to how you decide (Decision Zero), to how you think. This is not a motivation platform. <strong>It's a systematic effort to rebuild the way you think.</strong>`,
+    hero_desc:`Every day you make dozens of decisions. But most of the time you're not making wrong decisions — <strong>you're thinking wrong.</strong> Blindspot exists to fix this. There are invisible mechanisms shaping your decisions — and they can be made visible. From what you eat (Cravio), to how you decide (Decision Zero), to how you track your investments (Clarity), to how you think. This is not a motivation platform. <strong>It's a systematic effort to rebuild the way you think.</strong>`,
     cta1:"Stay Updated",cta2:"Explore Tools →",
     sec_why:"Why BLINDSPOT",sec_eco:"Ecosystem",sec_content:"Content",sec_notify:"Stay Updated",
     mani_h2:`What you can't see<br /><em>controls you.</em>`,
     mani_body:`<p>Biases, habits, and fleeting emotions seep silently into your decisions. Most of the time you don't notice — you only see the outcomes, not the reasons behind them.</p><p>BLINDSPOT makes these invisible mechanisms visible. So that at the exact moment of decision, right in the middle of a thought, you can take one step back.</p><p>Thinking better is not a talent, it's a practice. With the right systems, that practice can be developed.</p><p>On YouTube and Instagram, you can also find content on thinking psychology and decision science.</p>`,
     prod_h2:"BLINDSPOT tools",
-    cravio_badge:"Active",cravio_tagline:"by BLINDSPOT — Decide what to eat",
+    cravio_badge:"Soon",cravio_tagline:"by BLINDSPOT — Decide what to eat",
     cravio_desc:"Feeling a craving? Cravio lets you pick food by category and walks you through cooking it step by step. The end of mealtime chaos.",
-    dz_badge:"Coming Soon",dz_tagline:"by BLINDSPOT — Decision analysis tool",
+    cravio_cta:"Get launch notification →",
+    dz_badge:"Soon",dz_tagline:"by BLINDSPOT — Decision analysis tool",
     dz_desc:"Write a decision, thought, or problem. It detects context, surfaces your biases, lists tradeoffs, and suggests a mental model. One input, deep analysis.",
     dz_cta:"Get launch notification →",
-    ch_h2:"Where BLINDSPOT publishes",
+    clarity_badge:"Soon",clarity_tagline:"by BLINDSPOT — Investment tracking tool",
+    clarity_desc:"Track your portfolio, monitor your assets, make investment decisions with a clearer mind. Not complex, just focused.",
+    clarity_cta:"Get launch notification →",
+    ch_h2:"BLINDSPOT Social Media & Contact",
     yt_desc:"Short videos on thinking, decision psychology, and mind tools.",
     ig_desc:"Daily thought fragments, decision frameworks, and mind-opening content.",
     mail_h:"Contact",mail_desc:"For partnerships, suggestions, or just to say hello.",
@@ -588,9 +614,12 @@ async function submitEmail() {
   note.style.display = "none";
   ok.style.display = "block";
 }
+
 document.getElementById("emailInput").addEventListener("keydown", e => {
   if (e.key === "Enter") submitEmail();
 });
+
+applyLang("tr");
 </script>
 </body>
 </html>
