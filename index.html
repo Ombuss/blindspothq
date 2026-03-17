@@ -39,7 +39,7 @@
       background:var(--bg);
       color:var(--txt);
       font-family:'Jost',sans-serif;
-      font-size:16px;
+      font-size:18px;
       line-height:1.6;
       -webkit-font-smoothing:antialiased;
       overflow-x:hidden;
@@ -73,7 +73,7 @@
     }
 
     .nav-links a{
-      font-size:12px;letter-spacing:0.14em;text-transform:uppercase;
+      font-size:14px;letter-spacing:0.14em;text-transform:uppercase;
       color:var(--txt3);text-decoration:none;font-weight:400;
       transition:color 0.25s;
     }
@@ -82,7 +82,7 @@
     .lang-btn{
       background:var(--surf);border:1px solid var(--bdr2);
       color:var(--txt2);font-family:'Jost',sans-serif;
-      font-size:12px;font-weight:500;letter-spacing:0.1em;
+      font-size:14px;font-weight:500;letter-spacing:0.1em;
       padding:8px 14px;border-radius:4px;cursor:pointer;
       white-space:nowrap;transition:border-color 0.25s,color 0.25s;
       display:flex;align-items:center;gap:6px;
@@ -118,7 +118,7 @@
     .hero-desc,
     .manifesto-body {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(15px, 1.5vw, 17px);
+      font-size: clamp(18px, 2vw, 22px);
       line-height: 1.85;
       font-weight: 300;
       color: var(--txt2);
@@ -134,7 +134,7 @@
 
     .hero h1{
       font-family:'Cormorant Garamond',serif;font-weight:300;
-      font-size:clamp(46px,7vw,86px);line-height:1.06;
+      font-size:clamp(52px,7.5vw,92px);line-height:1.06;
       color:var(--txt);margin-bottom:32px;
       max-width:780px;position:relative;z-index:1;
       white-space:pre-line;
@@ -152,7 +152,7 @@
     .btn-primary{
       background:var(--violet);color:#fff;
       font-family:'Jost',sans-serif;font-weight:500;
-      font-size:12px;letter-spacing:0.18em;text-transform:uppercase;
+      font-size:14px;letter-spacing:0.18em;text-transform:uppercase;
       padding:15px 34px;border:none;cursor:pointer;
       text-decoration:none;display:inline-block;border-radius:3px;
       transition:background 0.25s,transform 0.2s,box-shadow 0.25s;
@@ -161,7 +161,7 @@
 
     .btn-ghost{
       background:transparent;color:var(--txt2);
-      font-family:'Jost',sans-serif;font-size:12px;letter-spacing:0.14em;
+      font-family:'Jost',sans-serif;font-size:14px;letter-spacing:0.14em;
       text-transform:uppercase;padding:15px 26px;
       border:1px solid var(--bdr2);cursor:pointer;
       text-decoration:none;display:inline-flex;align-items:center;gap:8px;
@@ -174,7 +174,7 @@
 
     /* SECTION LABEL */
     .sec-label{
-      font-size:11px;letter-spacing:0.24em;text-transform:uppercase;
+      font-size:13px;letter-spacing:0.24em;text-transform:uppercase;
       color:var(--violet);margin-bottom:48px;
       display:flex;align-items:center;gap:14px;font-weight:400;
     }
@@ -187,7 +187,7 @@
 
     .manifesto h2{
       font-family:'Cormorant Garamond',serif;font-weight:300;
-      font-size:clamp(28px,3.5vw,48px);line-height:1.2;color:var(--txt);
+      font-size:clamp(32px,4vw,54px);line-height:1.2;color:var(--txt);
     }
     .manifesto h2 em{font-style:italic;color:var(--vlt2)}
 
@@ -200,7 +200,7 @@
 
     .products h2{
       font-family:'Cormorant Garamond',serif;font-weight:300;
-      font-size:clamp(26px,3.5vw,42px);color:var(--txt);margin-bottom:48px;
+      font-size:clamp(30px,4vw,48px);color:var(--txt);margin-bottom:48px;
     }
 
     .products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
@@ -209,6 +209,7 @@
       border-radius:8px;padding:42px;position:relative;
       overflow:hidden;border:1px solid var(--bdr);background:var(--surf);
       transition:transform 0.3s,border-color 0.3s,box-shadow 0.3s;
+      display:flex;flex-direction:column;
     }
     .prod-card:hover{transform:translateY(-5px)}
 
@@ -224,7 +225,7 @@
     .prod-card.sage-card:hover{border-color:rgba(109,184,154,0.38);box-shadow:0 16px 48px rgba(109,184,154,0.08)}
 
     .prod-badge{
-      font-size:10px;letter-spacing:0.18em;text-transform:uppercase;
+      font-size:12px;letter-spacing:0.18em;text-transform:uppercase;
       padding:5px 13px;border-radius:50px;display:inline-block;
       margin-bottom:28px;font-weight:400;
     }
@@ -239,15 +240,15 @@
     }
 
     .prod-tagline{
-      font-size:11px;letter-spacing:0.1em;text-transform:uppercase;
+      font-size:13px;letter-spacing:0.1em;text-transform:uppercase;
       color:var(--txt3);margin-bottom:18px;font-weight:400;
     }
 
-    .prod-card p{font-size:15px;color:var(--txt2);line-height:1.8;font-weight:300}
+    .prod-card p{font-size:17px;color:var(--txt2);line-height:1.8;font-weight:300;flex:1}
 
     .prod-cta{
       display:inline-flex;align-items:center;gap:8px;margin-top:28px;
-      font-size:11px;letter-spacing:0.18em;text-transform:uppercase;
+      font-size:13px;letter-spacing:0.18em;text-transform:uppercase;
       text-decoration:none;transition:gap 0.2s;font-weight:400;
     }
     .prod-card.violet-card .prod-cta{color:var(--vlt2)}
@@ -259,16 +260,17 @@
 
     .channels h2{
       font-family:'Cormorant Garamond',serif;font-weight:300;
-      font-size:clamp(24px,3vw,38px);color:var(--txt);margin-bottom:44px;
+      font-size:clamp(28px,3.5vw,44px);color:var(--txt);margin-bottom:44px;
     }
 
-    .channels-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .channels-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch}
 
     .ch-card{
       background:var(--surf);border:1px solid var(--bdr);border-radius:7px;
       padding:28px 30px;display:flex;flex-direction:column;gap:12px;
       text-decoration:none;transition:transform 0.28s,border-color 0.28s;
     }
+    .ch-card p:not(.ch-handle){flex:1}
     .ch-card:hover{transform:translateY(-3px);border-color:var(--bdr2)}
 
     .ch-icon{
@@ -280,10 +282,10 @@
     .ch-card.ml .ch-icon{background:var(--vlt-pale);color:var(--vlt2)}
 
     .ch-card h4{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:19px;color:var(--txt)}
-    .ch-card p{font-size:13px;color:var(--txt3);font-weight:300;line-height:1.7;flex:1}
-    .ch-handle{font-size:12px;color:var(--violet) !important;margin-top:2px}
+    .ch-card p{font-size:15px;color:var(--txt3);font-weight:300;line-height:1.7;flex:1}
+    .ch-handle{font-size:14px;color:var(--violet) !important;margin-top:2px}
     .ch-card.ml .ch-handle{color:var(--violet) !important}
-    .ch-arrow{font-size:14px;color:var(--txt3);transition:transform 0.2s,color 0.2s;margin-top:4px}
+    .ch-arrow{font-size:18px;color:var(--txt3);transition:transform 0.2s,color 0.2s;margin-top:4px}
     .ch-card:hover .ch-arrow{transform:translateX(4px);color:var(--vlt2)}
     .ch-card.ml:hover .ch-arrow{color:var(--vlt2)}
 
@@ -303,12 +305,12 @@
 
     .email-sec h2{
       font-family:'Cormorant Garamond',serif;font-weight:300;
-      font-size:clamp(26px,4vw,42px);color:var(--txt);
+      font-size:clamp(30px,4.5vw,48px);color:var(--txt);
       margin-bottom:14px;line-height:1.2;
     }
     .email-sec h2 em{font-style:italic;color:var(--vlt2)}
 
-    .email-desc{font-size:15px;color:var(--txt3);margin-bottom:36px;font-weight:300;line-height:1.7}
+    .email-desc{font-size:17px;color:var(--txt3);margin-bottom:36px;font-weight:300;line-height:1.7}
 
     .email-form{
       display:flex;border:1px solid var(--bdr2);border-radius:4px;
@@ -318,7 +320,7 @@
 
     .email-input{
       flex:1;background:transparent;border:none;padding:15px 18px;
-      color:var(--txt);font-family:'Jost',sans-serif;font-size:15px;
+      color:var(--txt);font-family:'Jost',sans-serif;font-size:17px;
       font-weight:300;outline:none;min-width:0;
     }
     .email-input::placeholder{color:var(--txt3)}
@@ -326,12 +328,12 @@
     .email-btn{
       background:var(--violet);color:#fff;border:none;
       padding:15px 26px;font-family:'Jost',sans-serif;font-weight:500;
-      font-size:11px;letter-spacing:0.18em;text-transform:uppercase;
+      font-size:13px;letter-spacing:0.18em;text-transform:uppercase;
       cursor:pointer;transition:background 0.2s;white-space:nowrap;flex-shrink:0;
     }
     .email-btn:hover{background:var(--vlt2)}
 
-    .email-note{margin-top:12px;font-size:12px;color:var(--txt3);font-weight:300}
+    .email-note{margin-top:12px;font-size:14px;color:var(--txt3);font-weight:300}
     .email-success{display:none;font-size:15px;color:var(--sage2);font-weight:400;padding:16px 0}
 
     /* FOOTER */
@@ -340,8 +342,8 @@
       display:flex;align-items:center;justify-content:space-between;
       background:var(--bg2);
     }
-    .footer-logo{font-family:'Jost',sans-serif;font-weight:600;font-size:12px;letter-spacing:0.3em;text-transform:uppercase;color:var(--txt3)}
-    footer p{font-size:12px;color:var(--txt3);font-weight:300}
+    .footer-logo{font-family:'Jost',sans-serif;font-weight:600;font-size:14px;letter-spacing:0.3em;text-transform:uppercase;color:var(--txt3)}
+    footer p{font-size:14px;color:var(--txt3);font-weight:300}
 
     /* ANIMATIONS */
     @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
@@ -366,7 +368,7 @@
     }
 
     @media(max-width:600px){
-      .hero h1{font-size:40px}
+      .hero h1{font-size:44px}
       
       .btn-primary,.btn-ghost{width:100%;text-align:center;justify-content:center}
       .email-form{flex-direction:column}
@@ -515,7 +517,7 @@ const i18n = {
     cta1:"Haberdar Ol",cta2:"Ürünleri Keşfet →",
     sec_why:"Neden BLINDSPOT",sec_eco:"Ekosistem",sec_content:"İçerik",sec_notify:"Haberdar Ol",
     mani_h2:`Görmediğin şey<br /><em>seni yönetir.</em>`,
-    mani_body:`<p>Önyargılar, alışkanlıklar ve anlık duygular kararlarına sessizce sızar. Çoğu zaman bunu fark etmezsin; sadece sonuçları görürsün, nedenlerini değil.</p><p>BLINDSPOT, bu görünmez mekanizmaları görünür kılar. Tam karar anında, düşüncenin içindeyken bir adım geri çekilebilmeni sağlar.</p><p>Daha iyi düşünmek bir yetenek değil, bir pratiktir. Doğru sistemlerle bu pratik geliştirilebilir.</p><p>YouTube ve Instagram'da, düşünme psikolojisi ve karar bilimlerine dair içeriklere de ulaşabilirsin.</p>`,
+    mani_body:`<p>Önyargılar, alışkanlıklar ve anlık duygular kararlarına sessizce sızar. Çoğu zaman bunu fark etmezsin; <strong>sadece sonuçları görürsün, nedenlerini değil.</strong></p><p>BLINDSPOT, bu görünmez mekanizmaları <strong>görünür kılar.</strong> Tam karar anında, düşüncenin içindeyken bir adım geri çekilebilmeni sağlar.</p><p>Daha iyi düşünmek bir yetenek değil, <strong>bir pratiktir.</strong> Doğru sistemlerle bu pratik geliştirilebilir.</p><p>YouTube ve Instagram'da, düşünme psikolojisi ve karar bilimlerine dair içeriklere de ulaşabilirsin.</p>`,
     prod_h2:"BLINDSPOT araçları",
     cravio_badge:"Yakında",cravio_tagline:"by BLINDSPOT — Ne yiyeceğine karar ver",
     cravio_desc:"Craving mi hissediyorsun? Cravio kategorine göre yemek seçmeni sağlıyor ve nasıl pişireceğini adım adım gösteriyor. Yemek kararlarındaki kaosun sonu.",
@@ -547,7 +549,7 @@ const i18n = {
     cta1:"Stay Updated",cta2:"Explore Tools →",
     sec_why:"Why BLINDSPOT",sec_eco:"Ecosystem",sec_content:"Content",sec_notify:"Stay Updated",
     mani_h2:`What you can't see<br /><em>controls you.</em>`,
-    mani_body:`<p>Biases, habits, and fleeting emotions seep silently into your decisions. Most of the time you don't notice — you only see the outcomes, not the reasons behind them.</p><p>BLINDSPOT makes these invisible mechanisms visible. So that at the exact moment of decision, right in the middle of a thought, you can take one step back.</p><p>Thinking better is not a talent, it's a practice. With the right systems, that practice can be developed.</p><p>On YouTube and Instagram, you can also find content on thinking psychology and decision science.</p>`,
+    mani_body:`<p>Biases, habits, and fleeting emotions seep silently into your decisions. Most of the time you don't notice — <strong>you only see the outcomes, not the reasons behind them.</strong></p><p>BLINDSPOT makes these invisible mechanisms <strong>visible.</strong> So that at the exact moment of decision, right in the middle of a thought, you can take one step back.</p><p>Thinking better is not a talent, <strong>it's a practice.</strong> With the right systems, that practice can be developed.</p><p>On YouTube and Instagram, you can also find content on thinking psychology and decision science.</p>`,
     prod_h2:"BLINDSPOT tools",
     cravio_badge:"Soon",cravio_tagline:"by BLINDSPOT — Decide what to eat",
     cravio_desc:"Feeling a craving? Cravio lets you pick food by category and walks you through cooking it step by step. The end of mealtime chaos.",
