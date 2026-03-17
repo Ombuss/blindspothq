@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blindspot — Think Clearer</title>
+  <meta name="description" content="Blindspot, düşünme kaliteni artıran araçlar ve içerikler üreten bir ekosistem." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0a0a0a;
+      --surface:   #111111;
+      --border:    #1e1e1e;
+      --muted:     #333333;
+      --text:      #e8e4dc;
+      --text-dim:  #7a7570;
+      --accent:    #c8b89a;
+      --accent2:   #8a7a65;
+      --white:     #f5f0e8;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ── NOISE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 999;
+      opacity: 0.4;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 48px;
+      background: linear-gradient(to bottom, rgba(10,10,10,0.95), transparent);
+    }
+
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .nav-logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 120px 48px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg-circle {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(200,184,154,0.06) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent2);
+      padding: 6px 14px;
+      border-radius: 2px;
+      margin-bottom: 40px;
+      width: fit-content;
+    }
+
+    .hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(48px, 8vw, 96px);
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      max-width: 800px;
+      margin-bottom: 32px;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-size: clamp(16px, 2vw, 20px);
+      color: var(--text-dim);
+      max-width: 520px;
+      line-height: 1.7;
+      margin-bottom: 56px;
+      font-weight: 300;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #0a0a0a;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 16px 32px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-primary:hover {
+      background: var(--white);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-dim);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 16px 24px;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent2);
+      color: var(--accent);
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 40px;
+      left: 48px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .scroll-hint::before {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: var(--muted);
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 0 48px;
+    }
+
+    /* ── MANIFESTO ── */
+    .manifesto {
+      padding: 100px 48px;
+      max-width: 1100px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 48px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .section-label::after {
+      content: '';
+      display: block;
+      width: 48px;
+      height: 1px;
+      background: var(--accent2);
+    }
+
+    .manifesto-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .manifesto h2 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.1;
+      color: var(--white);
+      letter-spacing: -0.01em;
+    }
+
+    .manifesto-text {
+      color: var(--text-dim);
+      font-size: 16px;
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    .manifesto-text p + p {
+      margin-top: 20px;
+    }
+
+    .manifesto-text strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* ── TOOLS ── */
+    .tools {
+      padding: 80px 48px 100px;
+    }
+
+    .tools-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 56px;
+    }
+
+    .tools h2 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: clamp(24px, 3vw, 36px);
+      color: var(--white);
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .tool-card {
+      background: var(--surface);
+      padding: 40px;
+      position: relative;
+      transition: background 0.25s;
+      overflow: hidden;
+    }
+
+    .tool-card:hover {
+      background: #161616;
+    }
+
+    .tool-card.featured {
+      background: #141210;
+    }
+
+    .tool-card.featured:hover {
+      background: #181410;
+    }
+
+    .tool-status {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 1px;
+      display: inline-block;
+      margin-bottom: 28px;
+    }
+
+    .status-soon {
+      background: rgba(200,184,154,0.12);
+      color: var(--accent);
+      border: 1px solid rgba(200,184,154,0.2);
+    }
+
+    .status-later {
+      background: rgba(255,255,255,0.04);
+      color: var(--text-dim);
+      border: 1px solid var(--border);
+    }
+
+    .tool-icon {
+      font-size: 28px;
+      margin-bottom: 20px;
+      display: block;
+      filter: grayscale(0.3);
+    }
+
+    .tool-card h3 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--white);
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+
+    .tool-card p {
+      font-size: 14px;
+      color: var(--text-dim);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    .tool-card .tool-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 28px;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .tool-card .tool-cta:hover {
+      border-color: var(--accent2);
+    }
+
+    /* ── CHANNELS ── */
+    .channels {
+      padding: 80px 48px 100px;
+      border-top: 1px solid var(--border);
+    }
+
+    .channels-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .channel-card {
+      border: 1px solid var(--border);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      text-decoration: none;
+      transition: border-color 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .channel-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .channel-card.yt::before  { background: rgba(255,0,0,0.03); }
+    .channel-card.ig::before  { background: rgba(200,184,154,0.03); }
+    .channel-card.mail::before { background: rgba(138,122,101,0.05); }
+
+    .channel-card:hover { border-color: var(--muted); }
+    .channel-card:hover::before { opacity: 1; }
+
+    .channel-icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      font-size: 18px;
+    }
+
+    .channel-card h4 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--white);
+    }
+
+    .channel-card p {
+      font-size: 13px;
+      color: var(--text-dim);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    .channel-arrow {
+      margin-top: auto;
+      font-size: 20px;
+      color: var(--muted);
+      transition: transform 0.2s, color 0.2s;
+    }
+
+    .channel-card:hover .channel-arrow {
+      transform: translateX(4px);
+      color: var(--accent);
+    }
+
+    /* ── EMAIL ── */
+    .email-section {
+      padding: 80px 48px 100px;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+    }
+
+    .email-inner {
+      max-width: 560px;
+    }
+
+    .email-section h2 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: clamp(24px, 3vw, 36px);
+      color: var(--white);
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    .email-section p {
+      font-size: 15px;
+      color: var(--text-dim);
+      margin-bottom: 32px;
+      font-weight: 300;
+    }
+
+    .email-form {
+      display: flex;
+      gap: 0;
+    }
+
+    .email-input {
+      flex: 1;
+      background: var(--bg);
+      border: 1px solid var(--muted);
+      border-right: none;
+      padding: 14px 20px;
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .email-input::placeholder { color: var(--text-dim); }
+    .email-input:focus { border-color: var(--accent2); }
+
+    .email-btn {
+      background: var(--accent);
+      color: #0a0a0a;
+      border: none;
+      padding: 14px 28px;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    .email-btn:hover { background: var(--white); }
+
+    .email-note {
+      margin-top: 12px;
+      font-size: 12px;
+      color: var(--text-dim);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 40px 48px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+
+    .footer-logo span { color: var(--accent); }
+
+    footer p {
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-tag    { animation: fadeUp 0.6s ease both; animation-delay: 0.1s; }
+    .hero h1     { animation: fadeUp 0.7s ease both; animation-delay: 0.2s; }
+    .hero-sub    { animation: fadeUp 0.7s ease both; animation-delay: 0.35s; }
+    .hero-cta    { animation: fadeUp 0.7s ease both; animation-delay: 0.5s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 20px 24px; }
+      .nav-links { display: none; }
+      .hero, .manifesto, .tools, .channels, .email-section { padding-left: 24px; padding-right: 24px; }
+      .divider { margin: 0 24px; }
+      .manifesto-grid { grid-template-columns: 1fr; gap: 32px; }
+      .tools-grid { grid-template-columns: 1fr; }
+      .channels-grid { grid-template-columns: 1fr; }
+      .email-form { flex-direction: column; }
+      .email-input { border-right: 1px solid var(--muted); }
+      footer { flex-direction: column; gap: 12px; text-align: center; padding: 32px 24px; }
+      .scroll-hint { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="#">Blind<span>spot</span></a>
+    <ul class="nav-links">
+      <li><a href="#tools">Araçlar</a></li>
+      <li><a href="#channels">İçerik</a></li>
+      <li><a href="#notify">Haberdar Ol</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg-circle"></div>
+    <div class="hero-tag">Bir Ekosistem</div>
+    <h1>Daha net<br /><em>düşün.</em></h1>
+    <p class="hero-sub">
+      Blindspot, düşünme kaliteni artırmak için araçlar üretiyor ve içerikler yayınlıyor.
+      Karar al, önyargını gör, zihnini daha iyi kullan.
+    </p>
+    <div class="hero-cta">
+      <a href="#notify" class="btn-primary">Haberdar Ol</a>
+      <a href="#tools" class="btn-ghost">Araçları Gör →</a>
+    </div>
+    <div class="scroll-hint">Keşfet</div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- MANİFESTO -->
+  <section class="manifesto">
+    <div class="section-label">Neden Blindspot</div>
+    <div class="manifesto-grid">
+      <h2>Görmediğin şey seni yönetir.</h2>
+      <div class="manifesto-text">
+        <p>
+          Her gün onlarca karar alıyorsun. Ama çoğu zaman <strong>ne düşündüğünü değil, nasıl düşündüğünü</strong> sorgulama fırsatı bulamıyorsun. Önyargılar, alışkanlıklar ve anlık duygular bu kararların içine sızıyor.
+        </p>
+        <p>
+          Blindspot tam bu boşluk için var. Senin kör noktalarını görünür kılacak araçlar ve içerikler üretiyoruz. Karar anında, düşüncenin ortasında, bir adım geri çekilebilmek için.
+        </p>
+        <p>
+          Bu bir verimlilik takıntısı değil. <strong>Daha iyi düşünmenin, daha iyi yaşamayı getirdiğine</strong> dair bir inanç.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ARAÇLAR -->
+  <section class="tools" id="tools">
+    <div class="tools-header">
+      <div>
+        <div class="section-label">Araçlar</div>
+        <h2>Zihin için araç takımı</h2>
+      </div>
+    </div>
+    <div class="tools-grid">
+
+      <!-- Decision Zero -->
+      <div class="tool-card featured">
+        <span class="tool-status status-soon">Çok Yakında</span>
+        <span class="tool-icon">◎</span>
+        <h3>Decision Zero</h3>
+        <p>
+          Bir karar, düşünce ya da problemi yaz.
+          Decision Zero bağlamı algılar, önyargılarını ortaya çıkarır, tradeoff'ları listeler ve mental model önerir.
+          Tek giriş, derin analiz.
+        </p>
+        <a href="#notify" class="tool-cta">Lansman bildirimi al →</a>
+      </div>
+
+      <!-- Placeholder 2 -->
+      <div class="tool-card">
+        <span class="tool-status status-later">İleride</span>
+        <span class="tool-icon">◈</span>
+        <h3>Daha Fazlası Geliyor</h3>
+        <p>
+          Blindspot ekosistemi büyüyor.
+          Düşünme kaliteni artıracak yeni araçlar yolda.
+          Haberdar olmak için kaydol.
+        </p>
+      </div>
+
+      <!-- Placeholder 3 -->
+      <div class="tool-card">
+        <span class="tool-status status-later">İleride</span>
+        <span class="tool-icon">◇</span>
+        <h3>Yeni Araçlar</h3>
+        <p>
+          Her araç tek bir amaca hizmet eder.
+          Dağınık değil, odaklı. Karmaşık değil, derin.
+          Blindspot felsefesi böyle.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- KANALLAR -->
+  <section class="channels" id="channels">
+    <div class="section-label">İçerik</div>
+    <h2 style="font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(24px,3vw,36px);color:var(--white);">Blindspot nerede yayınlıyor</h2>
+    <div class="channels-grid">
+
+      <a href="https://www.youtube.com/@blindspothqtr" target="_blank" class="channel-card yt">
+        <div class="channel-icon">▶</div>
+        <h4>YouTube</h4>
+        <p>Düşünme, karar psikolojisi ve zihin araçları üzerine kısa videolar. @blindspothqtr</p>
+        <div class="channel-arrow">→</div>
+      </a>
+
+      <a href="https://www.instagram.com/blindspot.hq/" target="_blank" class="channel-card ig">
+        <div class="channel-icon">◉</div>
+        <h4>Instagram</h4>
+        <p>Günlük düşünce kırıntıları, karar çerçeveleri ve zihin açıcı içerikler. @blindspot.hq</p>
+        <div class="channel-arrow">→</div>
+      </a>
+
+      <a href="mailto:blindspot@blindspothq.com" class="channel-card mail">
+        <div class="channel-icon">✉</div>
+        <h4>İletişim</h4>
+        <p>Ortaklık, öneri veya sadece merhaba demek için. blindspot@blindspothq.com</p>
+        <div class="channel-arrow">→</div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- EMAIL -->
+  <section class="email-section" id="notify">
+    <div class="email-inner">
+      <div class="section-label">Haberdar Ol</div>
+      <h2>Decision Zero lansmanında ilk sen ol.</h2>
+      <p>
+        Erken erişim listesine gir. Spam yok, sadece önemli güncellemeler.
+      </p>
+      <div class="email-form">
+        <input
+          type="email"
+          class="email-input"
+          id="emailInput"
+          placeholder="e-posta adresin"
+        />
+        <button class="email-btn" onclick="handleSubmit()">Kaydol</button>
+      </div>
+      <p class="email-note" id="emailNote">Verilerini üçüncü taraflarla paylaşmıyoruz.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Blind<span>spot</span></div>
+    <p>© 2025 Blindspot HQ · blindspothq.com</p>
+  </footer>
+
+  <script>
+    function handleSubmit() {
+      const input = document.getElementById('emailInput');
+      const note  = document.getElementById('emailNote');
+      const email = input.value.trim();
+      if (!email || !email.includes('@')) {
+        note.textContent = 'Lütfen geçerli bir e-posta gir.';
+        note.style.color = '#c87a6a';
+        return;
+      }
+      // TODO: Supabase veya Google Sheets bağlantısı buraya gelecek
+      console.log('Email:', email);
+      input.value = '';
+      note.textContent = '✓ Kaydoldu. Lansmanda seninle olacağız.';
+      note.style.color = '#8aba8a';
+    }
+
+    document.getElementById('emailInput').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') handleSubmit();
+    });
+  </script>
+
+</body>
+</html>
