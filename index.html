@@ -179,7 +179,7 @@
     }
     .manifesto h2 em{font-style:italic;color:var(--vlt2)}
 
-    .manifesto-body{color:var(--txt2);font-size:16px;line-height:1.9;font-weight:300}
+    .manifesto-body{color:var(--txt2);font-size:16px;line-height:1.9;font-weight:300;text-align:justify;hyphens:auto}
     .manifesto-body p+p{margin-top:18px}
     .manifesto-body strong{color:var(--txt);font-weight:500}
 
@@ -265,15 +265,15 @@
     }
     .ch-card.yt .ch-icon{background:rgba(255,80,80,0.10);color:#ff7070}
     .ch-card.ig .ch-icon{background:var(--vlt-pale);color:var(--vlt2)}
-    .ch-card.ml .ch-icon{background:var(--sage-pale);color:var(--sage2)}
+    .ch-card.ml .ch-icon{background:var(--vlt-pale);color:var(--vlt2)}
 
     .ch-card h4{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:19px;color:var(--txt)}
     .ch-card p{font-size:13px;color:var(--txt3);font-weight:300;line-height:1.7;flex:1}
     .ch-handle{font-size:12px;color:var(--violet) !important;margin-top:2px}
-    .ch-card.ml .ch-handle{color:var(--sage) !important}
+    .ch-card.ml .ch-handle{color:var(--violet) !important}
     .ch-arrow{font-size:14px;color:var(--txt3);transition:transform 0.2s,color 0.2s;margin-top:4px}
     .ch-card:hover .ch-arrow{transform:translateX(4px);color:var(--vlt2)}
-    .ch-card.ml:hover .ch-arrow{color:var(--sage2)}
+    .ch-card.ml:hover .ch-arrow{color:var(--vlt2)}
 
     /* EMAIL */
     .email-sec{
@@ -383,7 +383,7 @@
   <h1 data-i18n="hero_h1">Yanlış karar
 vermiyorsun —
 <em>yanlış düşünüyorsun.</em></h1>
-  <p class="hero-desc" data-i18n="hero_desc">Her gün onlarca karar alıyorsun. Ama çoğu zaman yanlış karar vermiyorsun — <strong>yanlış düşünüyorsun.</strong> Blindspot, bu hatayı düzeltmek için var. Kararlarını şekillendiren görünmez mekanizmaları ortaya çıkaran araçlar geliştiriyoruz. Ne yediğinden (Cravio), nasıl karar verdiğine (Decision Zero), nasıl düşündüğüne kadar. Bu bir motivasyon platformu değil. <strong>Düşünme biçimini sistematik olarak yeniden inşa etme girişimi.</strong></p>
+  <p class="hero-desc" data-i18n="hero_desc">Her gün onlarca karar alıyorsun. Ama çoğu zaman yanlış karar vermiyorsun — <strong>yanlış düşünüyorsun.</strong> Blindspot, bu hatayı düzeltmek için var. Kararlarını şekillendiren görünmez mekanizmalar var — ve bunlar görünür kılınabilir. Ne yediğinden (Cravio), nasıl karar verdiğine (Decision Zero), nasıl düşündüğüne kadar. Bu bir motivasyon platformu değil. <strong>Düşünme biçimini sistematik olarak yeniden inşa etme girişimi.</strong></p>
   <div class="hero-cta">
     <a href="#notify" class="btn-primary" data-i18n="cta1">Haberdar Ol</a>
     <a href="#products" class="btn-ghost" data-i18n="cta2">Ürünleri Keşfet →</a>
@@ -397,7 +397,7 @@ vermiyorsun —
   <div class="sec-label" data-i18n="sec_why">Neden BLINDSPOT</div>
   <div class="manifesto-grid">
     <h2 data-i18n="mani_h2">Görmediğin şey<br /><em>seni yönetir.</em></h2>
-    <div class="manifesto-body" data-i18n="mani_body">
+    <div class="manifesto-body" data-i18n="mani_body"><p>Önyargılar, alışkanlıklar ve anlık duygular kararlarına sessizce sızar. Çoğu zaman bunu fark etmezsin; sadece sonuçları görürsün, nedenlerini değil.</p><p>BLINDSPOT, bu görünmez mekanizmaları görünür kılar. Tam karar anında, düşüncenin içindeyken bir adım geri çekilebilmeni sağlar.</p><p>Daha iyi düşünmek bir yetenek değil, bir pratiktir. Doğru sistemlerle bu pratik geliştirilebilir.</p><p>YouTube ve Instagram'da, düşünme psikolojisi ve karar bilimlerine dair içeriklere de ulaşabilirsin.</p>
       <p>Önyargılar, alışkanlıklar ve anlık duygular kararlarının içine sızıyor. Bunları fark etmeden, <strong>sadece sonuçları görüyorsun</strong> — nedeni değil.</p>
       <p>BLINDSPOT, bu görünmez mekanizmaları yüzeye çıkarıyor. Karar anında, düşüncenin tam ortasında, bir adım geri çekilebilmeni sağlıyor.</p>
       <p>Daha iyi düşünmek bir yetenek değil, <strong>bir pratik meselesi.</strong> Doğru araçlarla herkes bunu öğrenebilir.</p>
@@ -493,11 +493,11 @@ const i18n = {
     nav_products:"Ürünler",nav_content:"İçerik",nav_notify:"Haberdar Ol",
     hero_tag:"Bir düşünme ekosistemi",
     hero_h1:`Yanlış karar\nvermiyorsun —\n<em>yanlış düşünüyorsun.</em>`,
-    hero_desc:`Her gün onlarca karar alıyorsun. Ama çoğu zaman yanlış karar vermiyorsun — <strong>yanlış düşünüyorsun.</strong> Blindspot, bu hatayı düzeltmek için var. Kararlarını şekillendiren görünmez mekanizmaları ortaya çıkaran araçlar geliştiriyoruz. Ne yediğinden (Cravio), nasıl karar verdiğine (Decision Zero), nasıl düşündüğüne kadar. Araçların yanı sıra YouTube ve Instagram'da düşünme psikolojisi ve karar bilimleri üzerine içerikler de üretiyoruz. Bu bir motivasyon platformu değil. <strong>Düşünme biçimini sistematik olarak yeniden inşa etme girişimi.</strong>`,
+    hero_desc:`Her gün onlarca karar alıyorsun. Ama çoğu zaman yanlış karar vermiyorsun — <strong>yanlış düşünüyorsun.</strong> Blindspot, bu hatayı düzeltmek için var. Kararlarını şekillendiren görünmez mekanizmalar var — ve bunlar görünür kılınabilir. Ne yediğinden (Cravio), nasıl karar verdiğine (Decision Zero), nasıl düşündüğüne kadar. Bu bir motivasyon platformu değil. <strong>Düşünme biçimini sistematik olarak yeniden inşa etme girişimi.</strong>`,
     cta1:"Haberdar Ol",cta2:"Ürünleri Keşfet →",
     sec_why:"Neden BLINDSPOT",sec_eco:"Ekosistem",sec_content:"İçerik",sec_notify:"Haberdar Ol",
     mani_h2:`Görmediğin şey<br /><em>seni yönetir.</em>`,
-    mani_body:`<p>Önyargılar, alışkanlıklar ve anlık duygular kararlarının içine sızıyor. Bunları fark etmeden, <strong>sadece sonuçları görüyorsun</strong> — nedeni değil.</p><p>BLINDSPOT, bu görünmez mekanizmaları yüzeye çıkarıyor. Karar anında, düşüncenin tam ortasında, bir adım geri çekilebilmeni sağlıyor.</p><p>Daha iyi düşünmek bir yetenek değil, <strong>bir pratik meselesi.</strong> Doğru araçlarla herkes bunu öğrenebilir.</p>`,
+    mani_body:`<p>Önyargılar, alışkanlıklar ve anlık duygular kararlarına sessizce sızar. Çoğu zaman bunu fark etmezsin; sadece sonuçları görürsün, nedenlerini değil.</p><p>BLINDSPOT, bu görünmez mekanizmaları görünür kılar. Tam karar anında, düşüncenin içindeyken bir adım geri çekilebilmeni sağlar.</p><p>Daha iyi düşünmek bir yetenek değil, bir pratiktir. Doğru sistemlerle bu pratik geliştirilebilir.</p><p>YouTube ve Instagram'da, düşünme psikolojisi ve karar bilimlerine dair içeriklere de ulaşabilirsin.</p>`,
     prod_h2:"BLINDSPOT araçları",
     cravio_badge:"Aktif",cravio_tagline:"by BLINDSPOT — Ne yiyeceğine karar ver",
     cravio_desc:"Craving mi hissediyorsun? Cravio kategorine göre yemek seçmeni sağlıyor ve nasıl pişireceğini adım adım gösteriyor. Yemek kararlarındaki kaosun sonu.",
@@ -521,11 +521,11 @@ const i18n = {
     nav_products:"Products",nav_content:"Content",nav_notify:"Stay Updated",
     hero_tag:"A thinking ecosystem",
     hero_h1:`You're not making\nwrong decisions —\n<em>you're thinking wrong.</em>`,
-    hero_desc:`Every day you make dozens of decisions. But most of the time you're not making wrong decisions — <strong>you're thinking wrong.</strong> Blindspot exists to fix this mistake. We build tools that reveal the invisible mechanisms shaping your decisions. From what you eat (Cravio), to how you decide (Decision Zero), to how you think. Alongside our tools, we also create content on thinking psychology and decision science on YouTube and Instagram. This is not a motivation platform. <strong>It's a systematic effort to rebuild the way you think.</strong>`,
+    hero_desc:`Every day you make dozens of decisions. But most of the time you're not making wrong decisions — <strong>you're thinking wrong.</strong> Blindspot exists to fix this. There are invisible mechanisms shaping your decisions — and they can be made visible. From what you eat (Cravio), to how you decide (Decision Zero), to how you think. This is not a motivation platform. <strong>It's a systematic effort to rebuild the way you think.</strong>`,
     cta1:"Stay Updated",cta2:"Explore Tools →",
     sec_why:"Why BLINDSPOT",sec_eco:"Ecosystem",sec_content:"Content",sec_notify:"Stay Updated",
     mani_h2:`What you can't see<br /><em>controls you.</em>`,
-    mani_body:`<p>Biases, habits, and momentary emotions seep into your decisions. Without noticing them, <strong>you only see the outcomes</strong> — not the cause.</p><p>BLINDSPOT surfaces these invisible mechanisms. So that at the moment of decision, right in the middle of a thought, you can take one step back.</p><p>Thinking better is not a talent, <strong>it's a matter of practice.</strong> With the right tools, anyone can learn it.</p>`,
+    mani_body:`<p>Biases, habits, and fleeting emotions seep silently into your decisions. Most of the time you don't notice — you only see the outcomes, not the reasons behind them.</p><p>BLINDSPOT makes these invisible mechanisms visible. So that at the exact moment of decision, right in the middle of a thought, you can take one step back.</p><p>Thinking better is not a talent, it's a practice. With the right systems, that practice can be developed.</p><p>On YouTube and Instagram, you can also find content on thinking psychology and decision science.</p>`,
     prod_h2:"BLINDSPOT tools",
     cravio_badge:"Active",cravio_tagline:"by BLINDSPOT — Decide what to eat",
     cravio_desc:"Feeling a craving? Cravio lets you pick food by category and walks you through cooking it step by step. The end of mealtime chaos.",
