@@ -455,11 +455,11 @@ vermiyorsun —
       <div class="ch-arrow">→</div>
     </a>
 
-    <a href="mailto:blindspot@blindspothq.com" class="ch-card ml">
+    <a href="/cdn-cgi/l/email-protection#77151b1e19130407180337151b1e1913040718031f065914181a" class="ch-card ml">
       <div class="ch-icon">✉</div>
       <h4 data-i18n="mail_h">İletişim</h4>
       <p data-i18n="mail_desc">Ortaklık, öneri veya sadece merhaba demek için.</p>
-      <p class="ch-handle">blindspot@blindspothq.com</p>
+      <p class="ch-handle"><span class="__cf_email__" data-cfemail="26444a4f48425556495266444a4f4842555649524e570845494b">[email&#160;protected]</span></p>
       <div class="ch-arrow">→</div>
     </a>
 
@@ -487,7 +487,7 @@ vermiyorsun —
   <p data-i18n="footer">© 2026 Blindspot HQ · blindspothq.com</p>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const i18n = {
   tr: {
     nav_products:"Ürünler",nav_content:"İçerik",nav_notify:"Haberdar Ol",
@@ -568,27 +568,30 @@ function toggleLang() {
   applyLang(lang);
 }
 
-function submitEmail() {
-  const input = document.getElementById('emailInput');
-  const note  = document.getElementById('emailNote');
-  const ok    = document.getElementById('emailSuccess');
-  const form  = document.getElementById('emailForm');
+async function submitEmail() {
+  const input = document.getElementById("emailInput");
+  const note  = document.getElementById("emailNote");
+  const ok    = document.getElementById("emailSuccess");
+  const form  = document.getElementById("emailForm");
   const t     = i18n[lang];
   const email = input.value.trim();
-  if (!email || !email.includes('@') || !email.includes('.')) {
+  if (!email || !email.includes("@") || !email.includes(".")) {
     note.textContent = t.email_err;
-    note.style.color = 'var(--red)';
+    note.style.color = "var(--red)";
     return;
   }
-  console.log('Email captured:', email);
-  form.style.display = 'none';
-  note.style.display = 'none';
-  ok.style.display = 'block';
+  const formId = "1FAIpQLSeyCFYPJBuJpu52ljp1UstpApJPXVHeU9f_lYs2ZQxPnT2iFg";
+  const entryId = "entry.1655728874";
+  const url = "https://docs.google.com/forms/d/e/" + formId + "/formResponse?" + entryId + "=" + encodeURIComponent(email) + "&submit=Submit";
+  try { await fetch(url, { method: "POST", mode: "no-cors" }); } catch(e) {}
+  form.style.display = "none";
+  note.style.display = "none";
+  ok.style.display = "block";
 }
-
-document.getElementById('emailInput').addEventListener('keydown', e => {
-  if (e.key === 'Enter') submitEmail();
+document.getElementById("emailInput").addEventListener("keydown", e => {
+  if (e.key === "Enter") submitEmail();
 });
 </script>
 </body>
 </html>
+
